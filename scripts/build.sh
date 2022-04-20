@@ -1,1 +1,0 @@
-docker build -t us_streamchat_db .

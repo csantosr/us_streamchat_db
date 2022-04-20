@@ -1,1 +1,0 @@
-docker run -d -t -i -p 27017:27017 --name us_streamchat_db us_streamchat_db

@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  database:
+    image: mongo
+    container_name : us_streamchat_db
+    command: mongod --auth
+    environment:
+      - MONGO_INITDB_DATABASE=stramchatdb
+      - MONGO_INITDB_ROOT_USERNAME=us_streamchat_db
+      - MONGO_INITDB_ROOT_PASSWORD=nyepMThBy2WPNP7aQvC7ZezxL3U5CVCr
+    ports:
+      - '27017-27019:27017-27019'
+    volumes: 
+      - stramchatdbvol:/data/db
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+      
+volumes:
+  stramchatdbvol:
+    driver: local
